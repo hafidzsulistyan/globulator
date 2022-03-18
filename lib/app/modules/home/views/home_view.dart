@@ -1,22 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:globulator/app/core/theme.dart';
 
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  final ThemeData dark = ThemeData(
-    backgroundColor: const Color(0xff243441),
-    primaryColor: const Color(0xffEB8034),
-    brightness: Brightness.dark,
-    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white60),
-  );
-  final ThemeData light = ThemeData(
-    backgroundColor: const Color(0xffEBEBEB),
-    primaryColor: const Color(0xffEB8034),
-    brightness: Brightness.light,
-    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black38),
-  );
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -55,7 +44,7 @@ class HomeView extends GetView<HomeController> {
                           "${controller.text}",
                           style: TextStyle(
                             fontSize: 25,
-                            color: context.theme.colorScheme.secondary,
+                            color: context.theme.accentColor,
                           ),
                         ),
                       ),
