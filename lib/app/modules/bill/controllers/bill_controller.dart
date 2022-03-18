@@ -21,7 +21,9 @@ class BillController extends GetxController {
     if (data == "+") {
       personCounter.value++;
     } else if (data == "-") {
-      personCounter.value--;
+      if (personCounter.value > 1) {
+        personCounter.value--;
+      }
     }
   }
 }

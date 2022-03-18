@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:globulator/app/core/theme.dart';
-
-import '../controllers/home_controller.dart';
+import 'package:globulator/app/modules/home/controllers/home_controller.dart';
+import 'package:globulator/app/routes/app_pages.dart';
+import 'package:globulator/app/modules/home/controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
@@ -17,9 +18,35 @@ class HomeView extends GetView<HomeController> {
       backgroundColor: context.theme.backgroundColor,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
           child: Column(
             children: [
+              Container(
+                height: heightApp * 0.07,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                      onPressed: () => Get.toNamed(Routes.HOME),
+                      icon: Icon(
+                        Icons.home,
+                      )
+                    ),
+                    IconButton(
+                      onPressed: () => Get.toNamed(Routes.BMI),
+                      icon: Icon(
+                        Icons.monitor_weight
+                      )
+                    ),
+                    IconButton(
+                      onPressed: () => Get.toNamed(Routes.BILL),
+                      icon: Icon(
+                        Icons.attach_money
+                      )
+                    )
+                  ]
+                ),
+              ),
               Expanded(
                 child: Container(
                   width: widthApp,
@@ -63,16 +90,16 @@ class HomeView extends GetView<HomeController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ItemButtonCustom(
-                          text: "^",
-                          value: "^",
+                          text: "AC",
+                          value: "AllClear",
                         ),
                         ItemButtonCustom(
-                          text: "C",
+                          text: "⌫",
                           value: "Clear",
                         ),
                         ItemButtonCustom(
-                          text: "AC",
-                          value: "AllClear",
+                          text: "^",
+                          value: "^",
                         ),
                         Material(
                           borderRadius: BorderRadius.circular(10),
@@ -113,7 +140,7 @@ class HomeView extends GetView<HomeController> {
                           value: "%",
                         ),
                         ItemButtonCustom(
-                          text: ":",
+                          text: "÷",
                           value: "/",
                         ),
                       ],

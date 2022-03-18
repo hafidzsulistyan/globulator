@@ -18,15 +18,15 @@ class ItemButtonCustom extends GetView<BillController> {
     return Material(
       borderRadius: BorderRadius.circular(10),
       elevation: 7,
-      color: context.theme.backgroundColor,
+      color: context.theme.primaryColor,
       child: InkWell(
         onTap: () {
           controller.updatePersonCount(value);
         },
         borderRadius: BorderRadius.circular(10),
         child: Container(
-          width: Get.width * 0.165,
-          height: Get.width * 0.165,
+          width: Get.width * 0.1,
+          height: Get.width * 0.1,
           child: Center(
             child: Text(
               text,
